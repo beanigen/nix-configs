@@ -3,6 +3,7 @@
     #"swaybg --image ~/.config/nixos/wallpapers/front.png --mode fill"
     #"dbus-update-activation-environment --systemd DISPLAY WAYLAND-DISPLAY"
     #"bash ~/.config/lockonsleep/config.sh"
+    "waybar"
   ];
 
    monitor = [
