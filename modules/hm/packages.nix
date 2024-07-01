@@ -8,5 +8,6 @@
     pavucontrol
     prusa-slicer
     gamescope
+    firefox
   ];
 }

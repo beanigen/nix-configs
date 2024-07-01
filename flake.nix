@@ -1,5 +1,5 @@
 {
-  description = "flake for hypermac";
+  description = "flake for my systems";
   
 
   inputs = {
@@ -17,6 +17,13 @@
         ./baseConfig/hypermac/configuration.nix
 	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
 	
+      ];
+    };
+    nixosConfigurations."adventurer" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./baseConfig/adventurer/configuration.nix
+	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
       ];
     };
   };
