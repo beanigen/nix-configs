@@ -63,10 +63,9 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nouveau" ];
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       mesa
       mesa.drivers
@@ -102,7 +101,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -129,8 +127,6 @@
     #  thunderbird
     ];
   };
-
-  # Install firefox.
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
