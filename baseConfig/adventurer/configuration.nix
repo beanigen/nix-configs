@@ -90,8 +90,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.Variant = "";
   };
 
   # Configure console keymap
