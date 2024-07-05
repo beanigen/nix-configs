@@ -9,6 +9,7 @@
     prusa-slicer
     gamescope
     vlc
+    playerctl
     firefox
   ];
 }
