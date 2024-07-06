@@ -97,6 +97,7 @@
     ", XF86AudioNext, exec, playerctl next"
     ", XF86AudioPrev, exec, playerctl previous"
     ", XF86AudioStop, exec, playerctl stop"
+    ", XF86AudioMedia, exec, vlc"
     "$mod SHIFT, Q, killactive, "
     "$mod, M, exit, "
     "$mod SHIFT, space, togglefloating, "
