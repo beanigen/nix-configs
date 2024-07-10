@@ -14,7 +14,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-  services.fprintd.enable = true;
+#  services.fprintd.enable = true;
   networking.hostName = "adventurer"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.bluetooth = {
@@ -69,8 +69,8 @@
   services.xserver.videoDrivers = [ "nouveau" ];
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    #driSupport = true;
+    #driSupport32Bit = true;
     extraPackages = with pkgs; [
       mesa
       mesa.drivers
