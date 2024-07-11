@@ -22,6 +22,7 @@
     };
   };
 
+  programs.sway.enable = true;
   services.greetd = {
     enable = true;
     restart = true;
@@ -70,7 +71,12 @@
     extraPackages = with pkgs; [
       mesa
       mesa.drivers
-
+      vulkan-validation-layers
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+    extraPackages32 = with pkgs; [
+      driversi686Linux.mesa
     ];
   };
    fonts.packages = with pkgs; [
@@ -118,7 +124,7 @@
       tree
     ];
   };
-
+  security.polkit.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

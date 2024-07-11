@@ -16,9 +16,13 @@
   input = {
     kb_layout = "us";
     follow_mouse = 1;
-    touchpad.natural_scroll = "no";
     sensitivity = 0;
     accel_profile = "flat";
+    touchpad = {
+      natural_scroll = "no";
+      disable_while_typing = "no";
+      tap-to-click = "no";
+    };
   };
 
   general = {
@@ -69,7 +73,7 @@
   };
 
   master = {
-    new_is_master = true;
+#    new_is_master = true;
   };
 
   gestures = {
@@ -82,13 +86,18 @@
 
   binde = [
     # Volume stuffs
-    ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-    ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-    ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   ];
   bind = [
     # basic binds
     "$mod, Return, exec, foot"
+    ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+    ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ", XF86AudioPlay, exec, playerctl play-pause"
+    ", XF86AudioNext, exec, playerctl next"
+    ", XF86AudioPrev, exec, playerctl previous"
+    ", XF86AudioStop, exec, playerctl stop"
+    ", XF86AudioMedia, exec, vlc"
     "$mod SHIFT, Q, killactive, "
     "$mod, M, exit, "
     "$mod SHIFT, space, togglefloating, "
