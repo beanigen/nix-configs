@@ -11,5 +11,6 @@
     vlc
     playerctl
     firefox
+    libreoffice
   ];
 }
