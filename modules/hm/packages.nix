@@ -6,6 +6,7 @@
     hyfetch
     pamixer
     pavucontrol
+    gimp
     prusa-slicer
     gamescope
     vlc
