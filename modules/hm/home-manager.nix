@@ -42,6 +42,7 @@
         enable = true;
 	checkConfig = false; #temp fix for the unable to create gles2 renderer error
 	config = import ../../configs/sway.nix;
+	extraConfig = import ../../configs/swayfx;
       };
       wayland.windowManager.hyprland = {
         enable = true;
