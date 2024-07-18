@@ -37,9 +37,10 @@
         enable = true;
 	platformTheme.name = "gtk";
       };
-#      wayland.windowManager.sway = {
- #       enable = true;
-  #    };
+      wayland.windowManager.sway = {
+        enable = true;
+	config = import ../../configs/sway.nix;
+      };
       wayland.windowManager.hyprland = {
         enable = true;
 	systemd.enable = true;
