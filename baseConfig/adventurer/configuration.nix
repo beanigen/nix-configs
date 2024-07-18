@@ -48,7 +48,9 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Perth";
-
+  environment.variables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
   nix.settings.experimental-features = "nix-command flakes";

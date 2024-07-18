@@ -32,6 +32,9 @@
     };
   };
 
+  environment.variables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
     StandardInput = "tty";

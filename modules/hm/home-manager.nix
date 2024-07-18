@@ -38,7 +38,9 @@
 	platformTheme.name = "gtk";
       };
       wayland.windowManager.sway = {
+        package = pkgs.swayfx;
         enable = true;
+	checkConfig = false; #temp fix for the unable to create gles2 renderer error
 	config = import ../../configs/sway.nix;
       };
       wayland.windowManager.hyprland = {
