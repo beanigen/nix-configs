@@ -1,11 +1,14 @@
 {
   programs = {
+
     foot.enable = true;
+  
     waybar = {
       enable = true;
       settings = import ../../configs/waybar.nix;
       style = import ../../configs/waybar-style.nix;
     };
+    
     git = {
       enable = true;
       userName = "beanigen";

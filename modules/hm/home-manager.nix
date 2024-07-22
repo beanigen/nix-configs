@@ -2,9 +2,10 @@
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
-      imports = [ ./packages.nix ./programs.nix];
+      imports = [ ./packages.nix ./programs.nix ];
+
       home = {
-        username = "maya";
+	username = "maya";
         homeDirectory = "/home/maya";
         stateVersion = "23.11";
 	#file.".config/sway/config".source = ../../configs/sway;
@@ -16,7 +17,9 @@
 	  size = 40;
 	};
       };
+
       services.arrpc.enable = true;
+
       gtk = {
         enable = true;
 	theme = {
@@ -26,17 +29,20 @@
             size = "standard";
 	    variant = "mocha";
 	  };
-	};
-        cursorTheme = {
+        };
+        
+	cursorTheme = {
 	  name = "catppuccin-mocha-mauve-cursors";
 	  package = pkgs.catppuccin-cursors.mochaMauve;
 	  size = 40;
 	};
       };
+
       qt = {
         enable = true;
 	platformTheme.name = "gtk";
       };
+
       wayland.windowManager.sway = {
         package = pkgs.swayfx;
         enable = true;
@@ -44,12 +50,20 @@
 	config = import ../../configs/sway.nix;
 	extraConfig = import ../../configs/swayfx;
       };
-      wayland.windowManager.hyprland = {
+
+      xsession.windowManager.i3 = {
         enable = true;
-	systemd.enable = true;
-	xwayland.enable = true;
-	settings = import ../../configs/hyprland.nix;
+	package = pkgs.i3-gaps;
+	config = import ../../configs/i3.nix;
       };
+
+      #wayland.windowManager.hyprland = {
+      #  enable = true;
+      #  systemd.enable = true;
+      #  xwayland.enable = true;
+      #	 settings = import ../../configs/hyprland.nix;
+      #};
+
       services.udiskie.enable = true;
     };
 }

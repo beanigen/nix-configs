@@ -15,7 +15,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-#  services.fprintd.enable = true;
+  services.fprintd.enable = true;
   networking.hostName = "adventurer"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.bluetooth = {
@@ -46,6 +46,25 @@
   };
   networking.networkmanager.enable = true;
 
+#  specialisation = {
+#    proprietary-nvidia.configuration = {
+#      system.nixos.tags = [ "proprietary-nvidia" ];
+#      services.xserver.videoDrivers = lib.mkForce ["nvidia"];
+#      services.xserver.windowManager.i3.enable = true;
+#      services.xserver.displayManager.startx.enable = true;
+#      boot.initrd.kernelModules = lib.mkForce [ "nvidia" ];
+#      boot.extraModulePackages = lib.mkForce [ config.boot.kernelPackages.nvidiaPackages.legacy_340 ];
+#      services.xserver.autorun = false;
+#      hardware.nvidia = lib.mkForce {
+#        modesetting.enable = true;
+#	open = false;
+#	nvidiaSettings = true;
+#	package = config.boot.kernelPackages.nvidiaPackages.legacy_340;
+#      };
+#      boot.extraModprobeConfig = lib.mkForce "blacklist nouveau";
+#    };
+#  };
+#  nixpkgs.config.nvidia.acceptLicense = true;
   # Set your time zone.
   time.timeZone = "Australia/Perth";
   environment.variables = {
