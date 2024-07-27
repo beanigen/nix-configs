@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/90862db1-68f3-434f-9c2b-afbe44ffe46c";
       fsType = "ext4";

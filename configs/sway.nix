@@ -1,4 +1,4 @@
-{
+{lib, ...}:{
   modifier = "Mod4";
   terminal = "foot";
   gaps = {
@@ -11,6 +11,19 @@
       dwt = "disabled";
       scroll_factor = "0.3";
     };
+  };
+  keybindings = lib.mkOptionDefault {
+    "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+    "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+    "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+    "XF86AudioPlay" = "exec playerctl play-pause";
+    "XF86AudioNext" = "exec playerctl next";
+    "XF86AudioPrev" = "exec playerctl previous";
+    "XF86AudioStop" = "exec playerctl stop";
+    "XF86AudioMedia" = "exec vlc";
+    "XF86Launch1" = "exec nmcli device wifi rescan";
+    "Shift_L+Control_L+B" = "exec playerctl position 10-";
+    "Shift_L+Control_L+F" = "exec playerctl position 10+";
   };
 #  colors = {
 #    focused = import ./swaycolors.nix;

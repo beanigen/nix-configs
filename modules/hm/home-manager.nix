@@ -1,4 +1,4 @@
-{pkgs, ags, ...}:{ 
+{pkgs, ags, lib, ...}:{ 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
