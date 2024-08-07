@@ -15,7 +15,6 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-  services.fprintd.enable = true;
   networking.hostName = "adventurer"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.bluetooth = {
@@ -30,7 +29,7 @@
     enable = true;
     restart = true;
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
       user = "greeter";
     };
   };

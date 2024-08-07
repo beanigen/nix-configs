@@ -1,4 +1,4 @@
-{pkgs, lib, inputs, ...}:{ 
+{pkgs, lib, ...}:{ 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
@@ -17,7 +17,7 @@
 	};
       };
 
-      services.arrpc.enable = true;
+#      services.arrpc.enable = true;
 
       gtk = {
         enable = true;
