@@ -1,8 +1,8 @@
-{pkgs, ags, lib, ...}:{ 
+{pkgs, lib, inputs, ...}:{ 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
-      imports = [ ags.homeManagerModules.default ./packages.nix ./programs.nix ];
+      imports = [ ./packages.nix ./programs.nix ];
       home = {
 	username = "maya";
         homeDirectory = "/home/maya";
