@@ -9,6 +9,15 @@
       style = import ../../configs/waybar-style.nix;
     };
 
+#    ags = {
+#      enable = true;
+#      configDir = ../../configs/ags;
+#      extraPackages = with pkgs; [
+#        gtksourceview
+#	webkitgtk
+#	accountsservice
+#      ];
+#    };
 
     git = {
       enable = true;

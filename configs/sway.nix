@@ -11,7 +11,11 @@
       dwt = "disabled";
       scroll_factor = "0.3";
     };
+    mouse = {
+      accel_profile = "flat";
+    };
   };
+  workspaceLayout = "tabbed";
   keybindings = lib.mkOptionDefault {
     "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
     "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";

@@ -1,6 +1,7 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
+    fluffychat
     wl-clipboard
     cinnamon.nemo
     xfce.ristretto

@@ -32,6 +32,7 @@
     };
   };
 
+  programs.adb.enable = true;
   environment.variables = {
     WLR_NO_HARDWARE_CURSORS = "1";
   };
@@ -106,7 +107,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -122,7 +122,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maya = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "adbusers" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
