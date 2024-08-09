@@ -18,6 +18,14 @@
       ];
     };
 
+    nixosConfigurations."callisto" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./baseConfig/callisto/configuration.nix
+	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
+      ];
+    };
+
     nixosConfigurations."adventurer" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

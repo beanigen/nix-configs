@@ -6,16 +6,19 @@
     outer = 7;
   };
   input = {
-    "2:7:SynPS/2_Synaptics_TouchPad" = {
+    "type:touchpad" = {
       accel_profile = "flat";
       dwt = "disabled";
       scroll_factor = "0.3";
     };
-    mouse = {
+    "2:10:TPPS/2_IBM_TrackPoint" = {
+      scroll_factor = "0.3";
+    };
+    "type:mouse" = {
       accel_profile = "flat";
     };
   };
-  workspaceLayout = "tabbed";
+  workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {
     "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
     "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
