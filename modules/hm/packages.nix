@@ -3,6 +3,7 @@
     prismlauncher
     fluffychat
     wl-clipboard
+    brightnessctl
     cinnamon.nemo
     xfce.ristretto
     xfce.tumbler

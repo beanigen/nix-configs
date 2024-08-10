@@ -27,6 +27,9 @@
     "XF86AudioNext" = "exec playerctl next";
     "XF86AudioPrev" = "exec playerctl previous";
     "XF86AudioStop" = "exec playerctl stop";
+    "XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+    "XF86MonBrightnessDown" = "exec brightnessctl s 10%-";
+    "XF86MonBrightnessUp" = "exec brightnessctl s +10%";
     "XF86AudioMedia" = "exec vlc";
     "XF86Launch1" = "exec nmcli device wifi rescan";
     "Shift_L+Control_L+B" = "exec playerctl position 10-";
