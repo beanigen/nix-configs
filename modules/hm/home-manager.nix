@@ -30,6 +30,8 @@
 	    variant = "mocha";
 	  };
         };
+	iconTheme.package = pkgs.adwaita-icon-theme;
+	iconTheme.name = "Adwaita";
       };
       qt = {
         enable = true;
