@@ -11,6 +11,9 @@
       dwt = "disabled";
       scroll_factor = "0.3";
     };
+    "1739:0:Synaptics_TM3075-002" = {
+      natural_scroll = "enabled";
+    };
     "2:10:TPPS/2_IBM_TrackPoint" = {
       scroll_factor = "0.3";
     };
@@ -18,9 +21,14 @@
       accel_profile = "flat";
     };
   };
+  bars = [];
+  startup = [
+    { command = "waybar"; }
+  ];
   workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {
-    "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+    "Mod4+d" = "exec foot --title launch --app-id fzf-launcher bash -c 'compgen -c | sort -u | fzf | xargs swaymsg exec --'";
+    "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0";
     "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
     "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
     "XF86AudioPlay" = "exec playerctl play-pause";
@@ -35,6 +43,9 @@
     "Shift_L+Control_L+B" = "exec playerctl position 10-";
     "Shift_L+Control_L+F" = "exec playerctl position 10+";
   };
+  floating.criteria = [
+    { app_id = "^fzf-launcher$";}
+  ];
 #  colors = {
 #    focused = import ./swaycolors.nix;
 #    focused = {

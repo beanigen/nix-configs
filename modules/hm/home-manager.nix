@@ -1,13 +1,14 @@
-{pkgs, lib, ...}:{ 
+{pkgs, lib, inputs, ...}:{ 
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
-      imports = [ ./packages.nix ./programs.nix ];
+      imports = [ ./packages.nix ./programs.nix inputs.catppuccin.homeManagerModules.catppuccin ];
       home = {
 	username = "maya";
         homeDirectory = "/home/maya";
         stateVersion = "23.11";
 	#file.".config/sway/config".source = ../../configs/sway;
+	#file.".config/foot/foot.ini".source = ../../configs/foot.ini;
 	pointerCursor = {
 	  gtk.enable = true;
 	  x11.enable = true;
@@ -16,7 +17,7 @@
 	  size = 40;
 	};
       };
-
+      catppuccin.enable = true;
 #      services.arrpc.enable = true;
 
       gtk = {
@@ -29,17 +30,11 @@
 	    variant = "mocha";
 	  };
         };
-        
-	cursorTheme = {
-	  name = "catppuccin-mocha-mauve-cursors";
-	  package = pkgs.catppuccin-cursors.mochaMauve;
-	  size = 40;
-	};
       };
-
       qt = {
         enable = true;
-	platformTheme.name = "gtk";
+	style.name = "kvantum";
+	platformTheme.name = "kvantum";
       };
 
       wayland.windowManager.sway = {

@@ -41,6 +41,7 @@
     TTYVTDisallocate = "true";
   };
 
+  security.pam.services.gtklock = {};
   services.fprintd.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

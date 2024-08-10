@@ -8,7 +8,7 @@
     fixed-center = true;
 
     modules-left = [
-      "hyprland/workspaces"
+      "sway/workspaces"
       "tray"
       "custom/power"
     ];
