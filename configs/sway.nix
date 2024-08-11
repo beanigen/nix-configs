@@ -25,7 +25,7 @@
   defaultWorkspace = "workspace number 1";
   startup = [
     { command = "waybar"; }
-    { command = "udiskie -t"; }
+    { command = "udiskie"; }
     { command = "swaybg -m fit -i ~/.config/nixos/images/halftone.png"; }
     { command = "swaync"; }
   ];
