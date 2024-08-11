@@ -25,7 +25,9 @@
   defaultWorkspace = "workspace number 1";
   startup = [
     { command = "waybar"; }
+    { command = "udiskie -t"; }
     { command = "swaybg -m fit -i ~/.config/nixos/images/halftone.png"; }
+    { command = "swaync"; }
   ];
   workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {

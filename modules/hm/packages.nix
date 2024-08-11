@@ -2,6 +2,8 @@
   home.packages = with pkgs; [
     prismlauncher
     fluffychat
+    swaynotificationcenter
+    udiskie
     gtklock
     swaybg
     gzdoom

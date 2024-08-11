@@ -43,6 +43,7 @@
 
   security.pam.services.gtklock = {};
   services.fprintd.enable = true;
+  services.udisks2.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
