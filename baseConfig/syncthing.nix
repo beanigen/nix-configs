@@ -8,9 +8,9 @@
     overrideFolders = true;
     settings = {
       devices = {
-      "hypermac" = { id = "id goes here"; };
-      "adventurer" = { id = "id goes here"; };
-      "callisto" = { id = "id goes here"; };
+      "hypermac" = { id = ""; };
+      "adventurer" = { id = ""; };
+      "callisto" = { id = "NPXGWEK-JP4C2NM-QZZPBYI-ISAXIZK-ORCNVGO-C4GFRHJ-SWWFQGC-F5JAMQC"; };
       };
       folders = {
         "General" = {
