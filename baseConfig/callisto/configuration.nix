@@ -12,6 +12,7 @@
       ../syncthing.nix
     ];
 
+  programs.adb.enable = true;
   services.greetd = {
     enable = true;
     restart = true;
