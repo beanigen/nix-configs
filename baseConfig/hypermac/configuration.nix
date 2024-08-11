@@ -11,6 +11,7 @@
       ../substituters.nix
     ];
 
+  services.syncthing.enable = true;
   programs.gamemode.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
