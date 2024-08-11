@@ -9,7 +9,7 @@
     settings = {
       devices = {
       "hypermac" = { id = "XVY5YLM-QETCA4H-KT4XBEH-IR4U47O-CJCJ5YM-DPVWQQX-VHEK4MS-GJCMIQ2"; };
-      "adventurer" = { id = ""; };
+      "adventurer" = { id = "IYNIGZQ-ZLACAF4-ZKVTG3Z-VGRWMD4-S5TGK52-6565SC2-SHQ5MQM-BX7UFQW"; };
       "callisto" = { id = "NPXGWEK-JP4C2NM-QZZPBYI-ISAXIZK-ORCNVGO-C4GFRHJ-SWWFQGC-F5JAMQC"; };
       };
       folders = {
