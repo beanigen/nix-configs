@@ -3,6 +3,7 @@
     prismlauncher
     fluffychat
     gtklock
+    swaybg
     gzdoom
     fzf
     openrct2

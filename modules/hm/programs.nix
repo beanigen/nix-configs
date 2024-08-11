@@ -1,7 +1,13 @@
 {...}:{
   programs = {
 
-    foot.enable = true;
+    foot = {
+      enable = true;
+      settings = {
+        main.font = "monospace:size=10";
+	colors.alpha = "0.8";
+      };
+    };
   
     waybar = {
       enable = true;

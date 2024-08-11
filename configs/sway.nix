@@ -22,8 +22,10 @@
     };
   };
   bars = [];
+  defaultWorkspace = "workspace number 1";
   startup = [
     { command = "waybar"; }
+    { command = "swaybg -m fit -i ~/.config/nixos/images/halftone.png"; }
   ];
   workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {

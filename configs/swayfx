@@ -1,5 +1,5 @@
 "
-# blur enable - meh
+blur enable
 corner_radius 10
 # shadows enable - not using this because of flicker
 default_dim_inactive 0.3
