@@ -116,7 +116,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
-      neovim
       git
     ];
   };

@@ -1,6 +1,26 @@
 {...}:{
   programs = {
 
+    nvf = {
+      enable = true;
+      settings.vim = {
+        statusline.lualine = {
+          enable = true;
+          theme = "dracula";
+        };
+        autocomplete.enable = true;
+        languages = {
+	        enableFormat = true;
+	        enableLSP = true;
+	        enableTreesitter = true;
+	        nix.enable = true;
+	        clang.enable = true;
+	        html.enable = true;
+	        python.enable = true;
+	      };
+      };
+    };
+
     foot = {
       enable = true;
       settings = {

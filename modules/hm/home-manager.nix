@@ -2,7 +2,7 @@
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.maya = {
-      imports = [ ./packages.nix ./programs.nix inputs.catppuccin.homeManagerModules.catppuccin ];
+      imports = [ ./packages.nix ./programs.nix inputs.catppuccin.homeManagerModules.catppuccin inputs.nvf.homeManagerModules.default ];
       home = {
 	username = "maya";
         homeDirectory = "/home/maya";
