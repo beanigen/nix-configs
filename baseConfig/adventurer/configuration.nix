@@ -33,6 +33,7 @@
       user = "greeter";
     };
   };
+  services.syncthing.enable = true;
   programs.dconf.enable = true;
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
