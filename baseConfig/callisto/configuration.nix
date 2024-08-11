@@ -41,6 +41,20 @@
     TTYVTDisallocate = "true";
   };
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa
+      mesa.drivers
+      intel-media-sdk
+      intel-vaapi-driver
+      libvdpau-va-gl
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
   security.pam.services.gtklock = {};
   services.fprintd.enable = true;
   services.udisks2.enable = true;
