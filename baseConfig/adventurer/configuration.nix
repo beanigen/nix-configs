@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../substituters.nix
+      ../syncthing.nix
     ];
 
   # Bootloader.
@@ -33,7 +34,6 @@
       user = "greeter";
     };
   };
-  services.syncthing.enable = true;
   programs.dconf.enable = true;
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
@@ -163,7 +163,6 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     git
-    neovim  
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

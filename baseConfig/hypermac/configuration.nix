@@ -9,9 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../substituters.nix
+      ../syncthing.nix
     ];
 
-  services.syncthing.enable = true;
   programs.gamemode.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
@@ -28,7 +28,7 @@
     enable = true;
     restart = true;
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
       user = "greeter";
     };
   };

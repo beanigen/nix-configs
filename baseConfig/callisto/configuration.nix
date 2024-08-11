@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../substituters.nix
+      ../syncthing.nix
     ];
 
   services.greetd = {
@@ -19,7 +20,6 @@
       user = "greeter";
     };
   };
-  services.syncthing.enable = true;
   fonts.packages = with pkgs; [
     font-awesome
     jetbrains-mono
