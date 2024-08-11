@@ -8,7 +8,7 @@
     overrideFolders = true;
     settings = {
       devices = {
-      "hypermac" = { id = ""; };
+      "hypermac" = { id = "XVY5YLM-QETCA4H-KT4XBEH-IR4U47O-CJCJ5YM-DPVWQQX-VHEK4MS-GJCMIQ2"; };
       "adventurer" = { id = ""; };
       "callisto" = { id = "NPXGWEK-JP4C2NM-QZZPBYI-ISAXIZK-ORCNVGO-C4GFRHJ-SWWFQGC-F5JAMQC"; };
       };
