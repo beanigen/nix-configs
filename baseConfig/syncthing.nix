@@ -24,6 +24,13 @@
         "College" = {
           path = "/home/maya/sync/college";
           devices = [ "callisto" "hypermac" "adventurer" ];
+          versioning = {
+            type = "staggered";
+            params = {
+              cleanInterval = "3600";
+              maxAge = "15768000";
+            };
+          };
         };
       };
     };
