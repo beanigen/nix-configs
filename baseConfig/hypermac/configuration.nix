@@ -96,6 +96,13 @@
     source-han-serif-japanese
   ];
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "*";
+  };
+
   fonts.fontconfig.defaultFonts = {
     serif = ["Noto Serif" "Source Han Serif"];
     sansSerif = ["Noto Sans" "Source Han Sans"];
