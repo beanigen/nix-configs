@@ -16,6 +16,7 @@
 	        nix.enable = true;
 	        clang.enable = true;
 	        html.enable = true;
+          css.enable = true;
 	        python.enable = true;
 	      };
       };

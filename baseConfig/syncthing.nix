@@ -33,6 +33,10 @@
             };
           };
         };
+        "PrusaSlicer" = {
+          path = "/home/maya/.config/PrusaSlicer";
+          devices = [ "callisto" "hypermac" "adventurer" "traveler" ];
+        };
       };
     };
   };
