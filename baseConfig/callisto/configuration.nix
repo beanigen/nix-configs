@@ -10,8 +10,14 @@
       ./hardware-configuration.nix
       ../substituters.nix
       ../syncthing.nix
+      ../overrides.nix
     ];
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
   programs.adb.enable = true;
   services.greetd = {
     enable = true;
@@ -43,9 +49,7 @@
     TTYVTDisallocate = "true";
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    #intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -55,6 +59,7 @@
       intel-vaapi-driver
       libvdpau-va-gl
     ];
+    enable32Bit = true;
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
   security.pam.services.gtklock = {};
@@ -146,6 +151,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    lutris
   #  wget
   ];
 

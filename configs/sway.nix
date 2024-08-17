@@ -1,6 +1,9 @@
 {lib, ...}:{
   modifier = "Mod4";
   terminal = "foot";
+  output = {
+    HDMI-A-1.pos = "0 0";
+  };
   gaps = {
     inner = 5;
     outer = 7;
@@ -13,6 +16,7 @@
     };
     "1739:0:Synaptics_TM3075-002" = {
       natural_scroll = "enabled";
+      click_method = "clickfinger";
     };
     "2:10:TPPS/2_IBM_TrackPoint" = {
       scroll_factor = "0.3";

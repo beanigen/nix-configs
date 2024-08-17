@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../substituters.nix
       ../syncthing.nix
+      ../overrides.nix
     ];
 
   programs.gamemode.enable = true;
@@ -135,6 +136,7 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     firefox
+    lutris
     alacritty
     libsForQt5.qt5ct
     git
