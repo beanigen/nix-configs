@@ -1,8 +1,6 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
-    #    lutris
-    fluffychat
     swaynotificationcenter
     udiskie
     gtklock
@@ -12,7 +10,7 @@
     openrct2
     wl-clipboard
     brightnessctl
-    cinnamon.nemo
+    nemo
     xfce.ristretto
     xfce.tumbler
     inkscape

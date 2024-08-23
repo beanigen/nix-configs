@@ -30,7 +30,7 @@
   startup = [
     { command = "waybar"; }
     { command = "udiskie"; }
-    { command = "swaybg -m fit -i ~/.config/nixos/images/halftone.png"; }
+    { command = "swaybg -m fit -i ~/.config/nixos/images/twinkpad.png"; }
     { command = "swaync"; }
   ];
   workspaceLayout = "default";

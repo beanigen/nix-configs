@@ -27,6 +27,7 @@
       user = "greeter";
     };
   };
+  programs.kdeconnect.enable = true;
   fonts.packages = with pkgs; [
     font-awesome
     jetbrains-mono
@@ -49,7 +50,11 @@
     TTYVTDisallocate = "true";
   };
 
+  systemd.services = {
+    NetworkManager.requires = ["ModemManager.service"];
+  };
 
+  services.tlp.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -104,8 +109,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Configure keymap in X11
   services.xserver = {
-    layout = "au";
-    xkbVariant = "";
+    xkb.layout = "au";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
