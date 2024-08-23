@@ -166,6 +166,7 @@
       format-plugged = " {capacity}%  ";
       format-alt = "{icon}{time}";
       format-icons = ["  " "  " "  " "  " "  "];
+      bat = "BAT0";
     };
 
      "battery#bat2" = {
@@ -180,14 +181,15 @@
       format-alt = "{icon}{time}";
       format-icons = ["  " "  " "  " "  " "  "];
       interval = 3;
-      bat = "BAT2";
+      bat = "BAT1";
     };
 
     "network" = {
+      format = "  Connected";
       format-wifi = "  Connected";
       format-ethernet = "  Connected";
       format-disconnected = "  Disconnected";
-      tooltip-format-wifi = "{essid} | Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}";
+      tooltip-format-wifi = "{essid} | Signal Strength: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}";
       tooltip-format = "{ifname} via {gwaddr} ";
       tooltip-format-ethernet = "{ipaddr}  ";
       format-linked = "{ifname} (No IP) ";
