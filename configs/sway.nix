@@ -32,9 +32,12 @@
     { command = "udiskie"; }
     { command = "swaybg -m fit -i ~/.config/nixos/images/twinkpad.png"; }
     { command = "swaync"; }
+    { command = "kde-indicator"; }
+    { command = "blueman-applet"; }
   ];
   workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {
+    "Print" = "exec grim -g \"$(slurp)\" ~/Pictures/screenshots/screenshot-`date +%F-%T`";
     "Mod4+d" = "exec foot --title launch --app-id fzf-launcher bash -c 'compgen -c | sort -u | fzf | xargs swaymsg exec --'";
     "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0";
     "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";

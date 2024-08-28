@@ -1,0 +1,3 @@
+[submodule "modules/nixos-thinkpad-dock"]
+	path = modules/nixos-thinkpad-dock
+	url = https://github.com/oxzi/nixos-thinkpad-dock.git

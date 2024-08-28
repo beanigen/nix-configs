@@ -159,6 +159,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
+      tree
     ];
   };
 
