@@ -1,6 +1,9 @@
 {...}:{
   programs = {
 
+    starship = {
+      enable = true;
+    };
     nvf = {
       enable = true;
       settings.vim = {

@@ -2,6 +2,7 @@
   modifier = "Mod4";
   terminal = "foot";
   output = {
+    eDP-1.bg = "~/.config/nixos/images/twinkpad.png fill";
     HDMI-A-1.pos = "0 0";
   };
   gaps = {
@@ -30,7 +31,7 @@
   startup = [
     { command = "waybar"; }
     { command = "udiskie"; }
-    { command = "swaybg -m fit -i ~/.config/nixos/images/twinkpad.png"; }
+    { command = "swaybg -m fill -i ~/.config/nixos/images/halftone.png"; }
     { command = "swaync"; }
   ];
   workspaceLayout = "default";
