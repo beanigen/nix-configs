@@ -2,7 +2,9 @@
   modifier = "Mod4";
   terminal = "foot";
   output = {
-    HDMI-A-1.pos = "0 0";
+    eDP-1.pos = "0 1362";
+    "Hewlett Packard HP W2371d 6CM2220CSQ".pos = "1366 1050";
+    "Samsung Electric Company SyncMaster HMDQ202016".pos = "1517 0";
   };
   gaps = {
     inner = 5;
@@ -37,7 +39,7 @@
   ];
   workspaceLayout = "default";
   keybindings = lib.mkOptionDefault {
-    "Print" = "exec grim -g \"$(slurp)\" ~/Pictures/screenshots/screenshot-`date +%F-%T`";
+    "Print" = "exec grim -g \"$(slurp)\" ~/Pictures/screenshots/screenshot-`date +%F-%T`.png";
     "Mod4+d" = "exec foot --title launch --app-id fzf-launcher bash -c 'compgen -c | sort -u | fzf | xargs swaymsg exec --'";
     "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0";
     "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";

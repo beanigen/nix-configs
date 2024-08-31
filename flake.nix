@@ -8,6 +8,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     nvf.url = "github:notashelf/nvf";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
   
