@@ -1,8 +1,14 @@
-{pkgs, lib, inputs, ...}:{ 
+{pkgs, lib, inputs, ...}:
+
+{
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.maya = {
-    imports = [ ./packages.nix ./programs.nix inputs.catppuccin.homeManagerModules.catppuccin inputs.nvf.homeManagerModules.default ];
+    imports = [ ./packages.nix ./programs.nix
+      inputs.catppuccin.homeManagerModules.catppuccin
+      inputs.nvf.homeManagerModules.default
+      inputs.nix-index-database.hmModules.nix-index
+    ];
     home = {
       username = "maya";
       homeDirectory = "/home/maya";
@@ -40,12 +46,12 @@
 	    platformTheme.name = "kvantum";
     };
 
-    wayland.windowManager.sway = {
+    wayland.windowManager.sway = { 
       package = pkgs.swayfx;
       enable = true;
-	    checkConfig = false; #temp fix for the unable to create gles2 renderer error
-	    config = import ../../configs/sway.nix;
-	    extraConfig = import ../../configs/swayfx;
+      checkConfig = false; #temp fix for the unable to create gles2 renderer error
+      config = import ../../configs/sway;
+	    extraConfig = import ../../configs/sway/swayfx;
     };
 
     xsession.windowManager.i3 = {

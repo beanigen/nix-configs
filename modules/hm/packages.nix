@@ -1,7 +1,11 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
+    element-desktop-wayland
+    emacs
+    comma
     openscad
+    wlr-randr
     grim
     slurp
     swaynotificationcenter
