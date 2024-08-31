@@ -1,6 +1,9 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
+    openscad
+    grim
+    slurp
     swaynotificationcenter
     udiskie
     gtklock

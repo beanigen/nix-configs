@@ -10,7 +10,6 @@
     modules-left = [
       "sway/workspaces"
       "tray"
-      "custom/power"
     ];
 
     modules-center = [
@@ -185,7 +184,6 @@
     };
 
     "network" = {
-      format = "  Connected";
       format-wifi = "  Connected";
       format-ethernet = "  Connected";
       format-disconnected = "  Disconnected";

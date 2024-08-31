@@ -16,7 +16,7 @@
       system = "x86_64-linux";
       modules = [
         ./baseConfig/hypermac/configuration.nix
-	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}	
+	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}	
       ];
       specialArgs = { inherit inputs; };
     };
@@ -25,7 +25,7 @@
       system = "x86_64-linux";
       modules = [
         ./baseConfig/callisto/configuration.nix
-	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
+	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
       ];
       specialArgs = { inherit inputs; };
     };
@@ -34,7 +34,7 @@
       system = "x86_64-linux";
       modules = [
         ./baseConfig/adventurer/configuration.nix
-	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
+	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
       ];
       specialArgs = { inherit inputs; };
     };

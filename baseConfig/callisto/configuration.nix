@@ -11,8 +11,13 @@
       ../substituters.nix
       ../syncthing.nix
       ../overrides.nix
+      ./nixos-thinkpad-dock
     ];
 
+  hardware.thinkpad-dock = {
+    enable = true;
+  };
+  programs.gamemode.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -150,6 +155,7 @@
     packages = with pkgs; [
     #  thunderbird
       git
+      tree
     ];
   };
 

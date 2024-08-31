@@ -10,6 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
+  boot.kernelParams = [ "resume" ];
   boot.kernelModules = [ "kvm-intel" "sierra_net" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
@@ -25,7 +26,7 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/disk/by-uuid/0aabcebe-6b84-411f-b59e-d327f91cc799"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
