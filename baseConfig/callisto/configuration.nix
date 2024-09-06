@@ -32,6 +32,15 @@
       user = "greeter";
     };
   };
+  services.acpid = {
+    enable = true;
+    handlers = {
+      pauseOnDisconnect = {
+        event = "jack/headphone HEADPHONE unplug";
+        action = "${pkgs.sudo}/bin/sudo -u maya XDG_RUNTIME_DIR=/run/user/1000/ ${pkgs.playerctl}/bin/playerctl pause";
+      };
+    };
+  };
   programs.kdeconnect.enable = true;
   fonts.packages = with pkgs; [
     font-awesome
@@ -170,6 +179,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lutris
+    playerctl
   #  wget
   ];
 

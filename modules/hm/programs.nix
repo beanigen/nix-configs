@@ -15,7 +15,7 @@
         languages = {
 	        enableFormat = true;
 	        enableLSP = true;
-	        enableTreesitter = true;
+          #enableTreesitter = true; disabled until it fixes itself
 	        nix.enable = true;
 	        clang.enable = true;
 	        html.enable = true;
