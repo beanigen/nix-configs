@@ -14,7 +14,7 @@
   boot.kernelParams = [ "noefi" ];
   boot.blacklistedKernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages-rt_latest;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a8237e2f-c6e5-4818-8e29-aeecedc9e57a";
       fsType = "xfs";

@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     prismlauncher
     element-desktop-wayland
+    lmms
     emacs
     comma
     openscad
