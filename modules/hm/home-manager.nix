@@ -64,7 +64,7 @@
       enable = true;
       settings = [
         {
-          profile.name = "Laptop Docked";
+          profile.name = "docked";
           profile.outputs = [
             {
               criteria = "eDP-1";
@@ -77,7 +77,7 @@
           ];
         }
         {
-          profile.name = "Laptop Undocked";
+          profile.name = "undocked";
           profile.outputs = [
             {
               criteria = "eDP-1";
@@ -86,7 +86,7 @@
           ];
         }
         {
-          profile.name = "Desktop";
+          profile.name = "desktop";
           profile.outputs = [
             {
               criteria = "Hewlett Packard HP W2371d 6CM2220CSQ";
