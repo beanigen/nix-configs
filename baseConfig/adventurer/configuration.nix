@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../substituters.nix
-      ../syncthing.nix
-      ../overrides.nix
     ];
 
   # Bootloader.
@@ -98,17 +95,6 @@
       mesa.drivers
     ];
   };
-  fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    nerdfonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    source-han-sans
-    source-han-sans-japanese
-    source-han-serif-japanese
-  ];
 
   fonts.fontconfig.defaultFonts = {
     serif = ["Noto Serif" "Source Han Serif"];

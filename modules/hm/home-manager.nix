@@ -4,7 +4,7 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.maya = {
-    imports = [ ./packages.nix ./programs.nix
+    imports = [ ./packages.nix ./programs.nix ../../configs/sway
       inputs.catppuccin.homeManagerModules.catppuccin
       inputs.nvf.homeManagerModules.default
       inputs.nix-index-database.hmModules.nix-index
@@ -27,6 +27,7 @@
 #      services.arrpc.enable = true;
 
     gtk = {
+      catppuccin.enable = false;
       enable = true;
 	    theme = {
 	      name = "catppuccin-mocha-mauve-standard";
@@ -46,27 +47,65 @@
 	    platformTheme.name = "kvantum";
     };
 
-    wayland.windowManager.sway = { 
-      package = pkgs.swayfx;
-      enable = true;
-      checkConfig = false; #temp fix for the unable to create gles2 renderer error
-      config = import ../../configs/sway;
-	    extraConfig = import ../../configs/sway/swayfx;
-    };
+    #wayland.windowManager.sway = { 
+    #  package = pkgs.swayfx;
+    #  enable = true;
+    #  checkConfig = false; #temp fix for the unable to create gles2 renderer error
+    #  config = import ../../configs/sway;
+	  #  extraConfig = import ../../configs/sway/swayfx;
+    #};
 
     xsession.windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
 	    config = import ../../configs/i3.nix;
     };
-
+    services.kanshi = {
+      enable = true;
+      settings = [
+        {
+          profile.name = "Laptop Docked";
+          profile.outputs = [
+            {
+              criteria = "eDP-1";
+              position = "0,1362";
+            }
+            {
+              criteria = "Hewlett Packard HP W2371d 6CM2220CSQ";
+              position = "1366,1050";
+            }
+          ];
+        }
+        {
+          profile.name = "Laptop Undocked";
+          profile.outputs = [
+            {
+              criteria = "eDP-1";
+              position = "0,0";
+            }
+          ];
+        }
+        {
+          profile.name = "Desktop";
+          profile.outputs = [
+            {
+              criteria = "Hewlett Packard HP W2371d 6CM2220CSQ";
+              position = "0,0";
+            }
+            {
+              criteria = "Samsung Electric Company SyncMaster HMDQ202016";
+              position = "151,1080";
+            }
+          ];
+        }
+      ];
+    };
       #wayland.windowManager.hyprland = {
       #  enable = true;
       #  systemd.enable = true;
       #  xwayland.enable = true;
       #	 settings = import ../../configs/hyprland.nix;
       #};
-    services.udiskie.enable = true;
   };
 }
 

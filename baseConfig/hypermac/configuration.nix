@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../substituters.nix
-      ../syncthing.nix
-      ../overrides.nix
     ];
 
   programs.gamemode.enable = true;
@@ -85,17 +82,6 @@
       driversi686Linux.mesa
     ];
   };
-   fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    nerdfonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    source-han-sans
-    source-han-sans-japanese
-    source-han-serif-japanese
-  ];
 
   xdg.portal = {
     enable = true;

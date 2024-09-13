@@ -17,7 +17,7 @@
     nixosConfigurations."hypermac" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./baseConfig/hypermac/configuration.nix
+        ./baseConfig/hypermac
 	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}	
       ];
       specialArgs = { inherit inputs; };
@@ -26,7 +26,7 @@
     nixosConfigurations."callisto" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./baseConfig/callisto/configuration.nix
+        ./baseConfig/callisto
 	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
       ];
       specialArgs = { inherit inputs; };
@@ -35,7 +35,7 @@
     nixosConfigurations."adventurer" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./baseConfig/adventurer/configuration.nix
+        ./baseConfig/adventurer
 	      home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
       ];
       specialArgs = { inherit inputs; };

@@ -8,15 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../substituters.nix
-      ../syncthing.nix
-      ../overrides.nix
-      ./nixos-thinkpad-dock
     ];
 
-  hardware.thinkpad-dock = {
-    enable = true;
-  };
+  #hardware.thinkpad-dock = {
+  #  enable = true;
+  #  dockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,1362";
+  #  undockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,0";
+  #};
   programs.gamemode.enable = true;
   hardware.bluetooth = {
     enable = true;
@@ -42,17 +40,6 @@
     };
   };
   programs.kdeconnect.enable = true;
-  fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    nerdfonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    source-han-sans
-    source-han-sans-japanese
-    source-han-serif-japanese
-  ];
   programs.dconf.enable = true;
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
@@ -79,6 +66,12 @@
       libvdpau-va-gl
     ];
     enable32Bit = true;
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      intel-vaapi-driver
+      mesa
+      mesa.drivers
+      libvdpau-va-gl
+    ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "i965"; };
   security.pam.services.gtklock = {};
