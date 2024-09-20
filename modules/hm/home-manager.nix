@@ -90,11 +90,11 @@
           profile.outputs = [
             {
               criteria = "Hewlett Packard HP W2371d 6CM2220CSQ";
-              position = "0,0";
+              position = "0,1050";
             }
             {
               criteria = "Samsung Electric Company SyncMaster HMDQ202016";
-              position = "151,1080";
+              position = "151,0";
             }
           ];
         }

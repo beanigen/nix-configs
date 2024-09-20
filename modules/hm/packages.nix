@@ -6,6 +6,7 @@
     strawberry
     element-desktop-wayland
     lmms
+    kanshi
     emacs
     comma
     openscad

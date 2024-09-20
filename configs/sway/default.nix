@@ -38,6 +38,7 @@
       startup = [
         { command = "waybar"; }
         { command = "udiskie --appindicator -t"; }
+        { command = "kanshi"; }
         { command = "swaync"; }
         (lib.mkIf (osConfig.networking.hostName == "callisto") ({ command = "swaybg -m fill -i ~/.config/nixos/images/twinkpad.png"; }))
         (lib.mkIf (osConfig.networking.hostName != "callisto") ({ command = "swaybg -m fill -i ~/.config/nixos/images/halftone.png"; }))
