@@ -1,6 +1,9 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
+    libgpod
+    libimobiledevice
+    strawberry
     element-desktop-wayland
     lmms
     emacs

@@ -16,6 +16,30 @@
   #  undockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,0";
   #};
   programs.gamemode.enable = true;
+  virtualisation.kvmgt = {
+    enable = true;
+    vgpus = {
+      "i915-GVTg_V4_8" = {
+        uuid = [ "b4c3049a-74a1-11ef-8112-df4a4be644fd" ];
+      };
+    };
+  };
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
+  programs.virt-manager.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -153,7 +177,7 @@
   users.users.maya = {
     isNormalUser = true;
     description = "Maya";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
       git
