@@ -40,6 +40,14 @@
       ];
       specialArgs = { inherit inputs; };
     };
+    nixosConfigurations."nugget" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./baseConfig/nugget
+	home-manager.nixosModules.home-manager {imports = [./modules/hm/home-manager.nix];}
+      ];
+      specialArgs = { inherit inputs; };
+    };
   };
 }
 

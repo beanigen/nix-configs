@@ -2,10 +2,8 @@
   imports = [
     ./configuration.nix
     ../overrides.nix
-    ../ssh.nix
     ../syncthing.nix
+    ../ssh.nix
     ../substituters.nix
-    ../fonts.nix
-    ./nixos-thinkpad-dock
   ];
 }
