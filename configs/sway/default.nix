@@ -66,6 +66,7 @@
       };
       floating.criteria = [
         { app_id = "^fzf-launcher$";}
+        { title = "Picture-in-Picture";}
       ];
 #  colors = {
 #    focused = import ./swaycolors.nix;

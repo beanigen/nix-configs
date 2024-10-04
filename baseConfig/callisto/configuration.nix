@@ -79,7 +79,16 @@
     NetworkManager.requires = ["ModemManager.service"];
   };
 
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    };
+  };
+  services.udev.packages = with pkgs; [ platformio-core openocd ];
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -141,7 +150,11 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+  #  desktopManager.cinnamon.enable = true;
+    displayManager.startx.enable = true;
+  };
 
   # Enable the GNOME Desktop Environment.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
