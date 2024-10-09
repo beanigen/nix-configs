@@ -16,6 +16,7 @@
   #  undockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,0";
   #};
   programs.gamemode.enable = true;
+  programs.steam.enable = true;
   virtualisation.kvmgt = {
     enable = true;
     vgpus = {
@@ -152,7 +153,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-  #  desktopManager.cinnamon.enable = true;
+   # desktopManager.cinnamon.enable = true;
     displayManager.startx.enable = true;
   };
 
