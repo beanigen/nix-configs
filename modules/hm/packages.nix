@@ -1,6 +1,7 @@
 {pkgs, ...}:{
   home.packages = with pkgs; [
     prismlauncher
+    blender
     libgpod
     libimobiledevice
     strawberry

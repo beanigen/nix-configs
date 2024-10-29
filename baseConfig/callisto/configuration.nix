@@ -15,7 +15,12 @@
   #  dockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,1362";
   #  undockEvent = "${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --pos 0,0";
   #};
+  programs.steam.enable = true;
   programs.gamemode.enable = true;
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
   virtualisation.kvmgt = {
     enable = true;
     vgpus = {
@@ -79,7 +84,16 @@
     NetworkManager.requires = ["ModemManager.service"];
   };
 
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "ondemand";
+      CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "performance";
+    };
+  };
+  services.udev.packages = with pkgs; [ platformio-core openocd ];
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -108,12 +122,6 @@
   networking.hostName = "callisto"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    config.common.default = "*";
-  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -141,7 +149,11 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.cinnamon.enable = true;
+    displayManager.startx.enable = true;
+  };
 
   # Enable the GNOME Desktop Environment.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
