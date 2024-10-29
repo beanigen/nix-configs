@@ -4,6 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixgl.url = "github:nix-community/nixGL";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
@@ -47,6 +48,11 @@
 	      home-manager.nixosModules.home-manager {imports = [./modules/hm/minimal];}
       ];
       specialArgs = { inherit inputs; };
+    };
+    homeConfigurations.generic = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs { system = "x86_64-linux"; overlays = [inputs.nixgl.overlay]; };
+      modules = [ ./modules/hm/home.nix ];
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 }

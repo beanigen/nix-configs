@@ -5,6 +5,8 @@
     libimobiledevice
     strawberry
     element-desktop-wayland
+    nixgl.auto.nixGLDefault
+    nixgl.auto.nixGLNvidia
     lmms
     kanshi
     emacs
