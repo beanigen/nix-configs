@@ -9,10 +9,9 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ "kvmgt" "vfio-iommu-type1" ];
-  boot.blacklistedKernelModules = [ "mei_me" ];
-  boot.kernelParams = [ "resume" "intel_pstate=disable" "i915.enable_gvt=1" "intel_iommu=igfx_off" ];
-  boot.kernelModules = [ "cpufreq_ondemand" "cpufreq_conservative" "kvm-intel" "sierra_net" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelParams = [ "resume" ];
+  boot.kernelModules = [ "kvm-intel" "sierra_net" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
