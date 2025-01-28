@@ -1,3 +1,4 @@
+# DEPRECATED, USING MY [NEW REPO](https://github.com/beanigen/nix-flake)
 # nix-configs
 these are my nixos configs, not much to say
 ## current branch is broken, currently working on the pre-standalone branch as i debug
